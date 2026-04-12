@@ -1,6 +1,6 @@
 # Benchmark Tests
 
-**BenchmarkTests** is an open-source .NET console application that uses the [BenchmarkDotNet](https://benchmarkdotnet.org/) library to run performance benchmarks comparing different .NET Framework classes and coding approaches. It's a micro-benchmarking project designed to quantitatively compare the performance of .NET methods, and it's structured to easily add more benchmark classes in the Benchmarks/ folder over time.
+**BenchmarkTests** is an open-source .NET console application that uses the [BenchmarkDotNet](https://benchmarkdotnet.org/) library to run performance benchmarks comparing different .NET Framework classes and coding approaches. It's a micro-benchmarking project designed to quantitatively compare the performance of .NET methods, and it's structured to easily add more benchmark classes in the Benchmarks/ folder over time.  
 Its goal is to provide reliable performance data so developers can understand the runtime costs and trade-offs of various .NET types and methods.
 
 
