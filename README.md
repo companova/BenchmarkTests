@@ -1,18 +1,8 @@
-# BenchmarkTests
+# Benchmark Tests
 
-**BenchmarkTests** is an open-source .NET 8.0 console application that uses the [BenchmarkDotNet](https://benchmarkdotnet.org/) library to run performance benchmarks comparing different .NET Framework APIs and coding approaches. Its goal is to provide reliable performance data so developers can understand the runtime costs and trade-offs of various .NET types and methods.
+**BenchmarkTests** is an open-source .NET console application that uses the [BenchmarkDotNet](https://benchmarkdotnet.org/) library to run performance benchmarks comparing different .NET Framework classes and coding approaches. It's a micro-benchmarking project designed to quantitatively compare the performance of .NET methods, and it's structured to easily add more benchmark classes in the Benchmarks/ folder over time.  
+Its goal is to provide reliable performance data so developers can understand the runtime costs and trade-offs of various .NET types and methods.
 
-## Current Benchmark: `Substring` vs `Span`/`Slice`
-
-The repo currently contains one benchmark class — **`SubstringVsSlice`** — which measures and compares five different ways to extract substrings from a .NET `string`:
-
-| Method | What it does |
-|---|---|
-| **`SpanNoToString`** | Creates a `ReadOnlySpan<char>` and slices it, but never converts back to a `string`. Shows the raw cost of span operations alone. |
-| **`Substring`** | Uses the classic `string.Substring()` method, which allocates new `string` objects on the heap. |
-| **`Span`** | Calls `AsSpan()` with offset/length to get slices, then converts them back to strings via `.ToString()`. |
-| **`SpanAndSlices`** | Gets a span of the entire string first, then uses `.Slice()` to carve out pieces, and converts them to strings. |
-| **`SpanAndSlicesNoReturn`** | Same as above but doesn't return a value — useful for isolating the cost of the slice + ToString work without a return overhead. |
 
 ## How It Works
 
@@ -25,7 +15,7 @@ The repo currently contains one benchmark class — **`SubstringVsSlice`** — w
 ```
 BenchmarkTests/
 ├── Program.cs                  # Entry point — runs the benchmark suite
-├── Benchmarks/
+├── Benchmarks/                 # Folder for Benchmark Tests
 │   └── SubstringVsSlice.cs     # Benchmark class comparing Substring vs Span/Slice
 ├── BenchmarkTests.csproj       # .NET 8 project, references BenchmarkDotNet 0.15.8
 ├── GlobalSuppressions.cs       # Code analysis suppressions
@@ -42,6 +32,31 @@ dotnet run -c Release
 
 BenchmarkDotNet will output a detailed summary table with mean execution time, memory allocations, and statistical information for each benchmark method.
 
+## Benchmarks:
+### Substring vs Span/Slice
+
+**`SubstringVsSlice`** is a benchmark class which measures and compares five different ways to extract substrings from a .NET `string`:
+
+| Method | What it does |
+|---|---|
+| **`SpanNoToString`** | Creates a `ReadOnlySpan<char>` and slices it, but never converts back to a `string`. Shows the raw cost of span operations alone. |
+| **`Substring`** | Uses the classic `string.Substring()` method. Shows the raw cost of Substring operation which allocates new `string` objects on the heap. |
+| **`Span`** | Calls `AsSpan()` with offset/length to get slices, then converts them to strings via `.ToString()`. |
+| **`SpanAndSlices`** | Gets a span of the entire string first, then uses `.Slice()` to carve out pieces, and converts them to strings. |
+| **`SpanAndSlicesNoReturn`** | Same as above but doesn't return a value — useful for isolating the cost of the slice + ToString work without a return overhead. |
+
+
 ## License
 
 This project is open-source. See the [LICENSE](LICENSE) file for details.
+
+## CompaNova LLC
+[CompaNova](https://www.companova.com/)  
+### Applications
+[Password Manager](https://www.companova.com/passwordmanager/)  
+[Password Generator](https://www.companova.com/passwordgenerator/)  
+### Games
+[Math & Match](https://www.companova.com/mathmatch/)  
+[Alphabet Match](https://www.companova.com/alphabetmatch/)  
+[Fruit and Match](https://www.companova.com/fruitmatch/)  
+[Veggie Match](https://www.companova.com/vegetablematch/)  
