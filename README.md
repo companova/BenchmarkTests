@@ -33,7 +33,7 @@ dotnet run -c Release
 BenchmarkDotNet will output a detailed summary table with mean execution time, memory allocations, and statistical information for each benchmark method.
 
 ## Benchmarks:
-###`Substring` vs `Span`/`Slice`
+### Substring vs Span/Slice
 
 **`SubstringVsSlice`** is a benchmark class which measures and compares five different ways to extract substrings from a .NET `string`:
 
@@ -49,3 +49,14 @@ BenchmarkDotNet will output a detailed summary table with mean execution time, m
 ## License
 
 This project is open-source. See the [LICENSE](LICENSE) file for details.
+
+## CompaNova LLC
+[CompaNova](https://www.companova.com/)  
+### Applications
+[Password Manager](https://www.companova.com/passwordmanager/)  
+[Password Generator](https://www.companova.com/passwordgenerator/)  
+### Games
+[Math & Match](https://www.companova.com/mathmatch/)  
+[Alphabet Match](https://www.companova.com/alphabetmatch/)  
+[Fruit and Match](https://www.companova.com/fruitmatch/)  
+[Veggie Match](https://www.companova.com/vegetablematch/)  
