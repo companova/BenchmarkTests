@@ -15,6 +15,8 @@ Its goal is to provide reliable performance data so developers can understand th
 ```
 BenchmarkTests/
 ├── Program.cs                  # Entry point — runs the benchmark suite
+├── BenchmarkResslts/           # Folder for Benchmark Results
+│   └── SubstringVsSlice.md     # Benchmark Results comparing Substring vs Span/Slice
 ├── Benchmarks/                 # Folder for Benchmark Tests
 │   └── SubstringVsSlice.cs     # Benchmark class comparing Substring vs Span/Slice
 ├── BenchmarkTests.csproj       # .NET 8 project, references BenchmarkDotNet 0.15.8
