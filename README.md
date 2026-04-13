@@ -48,6 +48,9 @@ BenchmarkDotNet will output a detailed summary table with mean execution time, m
 | **`SpanAndSlicesNoReturn`** | Same as above but doesn't return a value — useful for isolating the cost of the slice + ToString work without a return overhead. |
 
 ### Substring vs Span/Slice Results
+
+[Explanation of Results](BenchmarkResults/SubstringVsSlice.md)
+
 Environment: Apple M1 Max, 1 CPU, 10 logical and 10 physical cores .NET SDK 9.0.310.  
 [Host] : .NET 8.0.23 (8.0.23, 8.0.2325.60607), Arm64 RyuJIT armv8.0-a
 
@@ -67,10 +70,10 @@ This project is open-source. See the [LICENSE](LICENSE) file for details.
 ## CompaNova LLC
 [CompaNova](https://www.companova.com/)  
 ### Applications
-[Password Manager](https://www.companova.com/passwordmanager/)  
-[Password Generator](https://www.companova.com/passwordgenerator/)  
+- [Password Manager](https://www.companova.com/passwordmanager/)  
+- [Password Generator](https://www.companova.com/passwordgenerator/)  
 ### Games
-[Math & Match](https://www.companova.com/mathmatch/)  
-[Alphabet Match](https://www.companova.com/alphabetmatch/)  
-[Fruit and Match](https://www.companova.com/fruitmatch/)  
-[Veggie Match](https://www.companova.com/vegetablematch/)  
+- [Math & Match](https://www.companova.com/mathmatch/)  
+- [Alphabet Match](https://www.companova.com/alphabetmatch/)  
+- [Fruit and Match](https://www.companova.com/fruitmatch/)  
+- [Veggie Match](https://www.companova.com/vegetablematch/)  
