@@ -45,6 +45,18 @@ BenchmarkDotNet will output a detailed summary table with mean execution time, m
 | **`SpanAndSlices`** | Gets a span of the entire string first, then uses `.Slice()` to carve out pieces, and converts them to strings. |
 | **`SpanAndSlicesNoReturn`** | Same as above but doesn't return a value — useful for isolating the cost of the slice + ToString work without a return overhead. |
 
+### Substring vs Span/Slice Results
+Environment: Apple M1 Max, 1 CPU, 10 logical and 10 physical cores .NET SDK 9.0.310.  
+[Host] : .NET 8.0.23 (8.0.23, 8.0.2325.60607), Arm64 RyuJIT armv8.0-a
+
+| Method                | Mean       | Error     | StdDev    |
+|---------------------- |-----------:|----------:|----------:|
+| SpanNoToString        |  0.2222 ns | 0.0030 ns | 0.0028 ns |
+| Substring             |  **6.7718** ns | 0.0357 ns | 0.0316 ns |
+| Span                  | **13.5729** ns | 0.0385 ns | 0.0321 ns |
+| SpanAndSlices         | 13.9567 ns | 0.0748 ns | 0.0663 ns |
+| SpanAndSlicesNoReturn | 13.7949 ns | 0.0953 ns | 0.0744 ns |
+
 
 ## License
 
