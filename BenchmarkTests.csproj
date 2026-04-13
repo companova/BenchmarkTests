@@ -26,8 +26,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Benchmarks\" />
+    <None Remove="BenchmarkResults\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Benchmarks\" />
+    <Folder Include="BenchmarkResults\" />
   </ItemGroup>
 </Project>
